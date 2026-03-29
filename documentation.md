@@ -18,34 +18,31 @@ usecaseDiagram
     actor Admin
     actor Dosen
     actor Mahasiswa
-    
-    rectangle SIMAKPEN {
+
+    package SIMAKPEN {
         usecase "Login / Autentikasi" as UC1
-        
         usecase "Manajemen Pengguna" as UC2
         usecase "Manajemen Mata Kuliah" as UC3
         usecase "Manajemen Kelas" as UC4
-        
         usecase "Lihat Jadwal & Kelas Diampu" as UC5
         usecase "Manajemen Komponen Nilai" as UC6
         usecase "Input & Rekap Nilai" as UC7
-        
         usecase "Lihat Grafik Nilai Akhir" as UC8
         usecase "Melihat Rincian Nilai per Komponen" as UC9
     }
-    
+
     Admin --> UC1
     Dosen --> UC1
     Mahasiswa --> UC1
-    
+
     Admin --> UC2
     Admin --> UC3
     Admin --> UC4
-    
+
     Dosen --> UC5
     Dosen --> UC6
     Dosen --> UC7
-    
+
     Mahasiswa --> UC8
     Mahasiswa --> UC9
     
