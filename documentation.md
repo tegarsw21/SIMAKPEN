@@ -11,45 +11,43 @@ SIMAKPEN adalah sebuah sistem berbasis web yang dibangun menggunakan **Laravel 1
 ---
 
 ## 1. Use Case Diagram
-Diagram ini memvisualisasikan fungsionalitas utama yang dapat diakses oleh masing-masing *actor* (Admin, Dosen, Mahasiswa) di dalam sistem.
+Diagram ini memvisualisasikan fungsionalitas utama yang dapat diakses oleh masing-masing *actor* (Admin, 
+Dosen, Mahasiswa) di dalam sistem.
 
-```mermaid
-usecaseDiagram
-    actor Admin
-    actor Dosen
-    actor Mahasiswa
-
-    package SIMAKPEN {
-        usecase "Login / Autentikasi" as UC1
-        usecase "Manajemen Pengguna" as UC2
-        usecase "Manajemen Mata Kuliah" as UC3
-        usecase "Manajemen Kelas" as UC4
-        usecase "Lihat Jadwal & Kelas Diampu" as UC5
-        usecase "Manajemen Komponen Nilai" as UC6
-        usecase "Input & Rekap Nilai" as UC7
-        usecase "Lihat Grafik Nilai Akhir" as UC8
-        usecase "Melihat Rincian Nilai per Komponen" as UC9
-    }
-
-    Admin --> UC1
-    Dosen --> UC1
-    Mahasiswa --> UC1
-
-    Admin --> UC2
-    Admin --> UC3
-    Admin --> UC4
-
-    Dosen --> UC5
-    Dosen --> UC6
-    Dosen --> UC7
-
-    Mahasiswa --> UC8
-    Mahasiswa --> UC9
-    
-    %% Relasi Include extend jika ada (Opsional untuk sistem dasar)
 ```
+graph LR
+    subgraph Actors
+        A[Admin]
+        D[Dosen]
+        M[Mahasiswa]
+    end
 
----
+    subgraph SIMAKPEN
+        UC1(Login / Autentikasi)
+        UC2(Manajemen Pengguna)
+        UC3(Manajemen Mata Kuliah)
+        UC4(Manajemen Kelas)
+        UC5(Lihat Jadwal & Kelas Diampu)
+        UC6(Manajemen Komponen Nilai)
+        UC7(Input & Rekap Nilai)
+        UC8(Lihat Grafik Nilai Akhir)
+        UC9(Melihat Rincian Nilai per Komponen)
+    end
+
+    A --- UC1
+    A --- UC2
+    A --- UC3
+    A --- UC4
+    
+    D --- UC1
+    D --- UC5
+    D --- UC6
+    D --- UC7
+    
+    M --- UC1
+    M --- UC8
+    M --- UC9
+```
 
 ## 2. Activity Diagram (Proses Penilaian)
 Diagram aktivitas berikut menjelaskan alur spesifik saat seorang **Dosen** melakukan penginputan nilai untuk mahasiswanya.
