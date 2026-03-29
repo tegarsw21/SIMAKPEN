@@ -15,6 +15,7 @@ Diagram ini memvisualisasikan fungsionalitas utama yang dapat diakses oleh masin
 Dosen, Mahasiswa) di dalam sistem.
 
 
+```mermaid
 graph LR
     subgraph Actors
         A[Admin]
@@ -47,7 +48,7 @@ graph LR
     M --- UC1
     M --- UC8
     M --- UC9
-
+```
 
 ## 2. Activity Diagram (Proses Penilaian)
 Diagram aktivitas berikut menjelaskan alur spesifik saat seorang **Dosen** melakukan penginputan nilai untuk mahasiswanya.
