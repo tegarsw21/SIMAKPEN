@@ -14,7 +14,7 @@ SIMAKPEN adalah sebuah sistem berbasis web yang dibangun menggunakan **Laravel 1
 Diagram ini memvisualisasikan fungsionalitas utama yang dapat diakses oleh masing-masing *actor* (Admin, 
 Dosen, Mahasiswa) di dalam sistem.
 
-```
+
 graph LR
     subgraph Actors
         A[Admin]
@@ -47,7 +47,7 @@ graph LR
     M --- UC1
     M --- UC8
     M --- UC9
-```
+
 
 ## 2. Activity Diagram (Proses Penilaian)
 Diagram aktivitas berikut menjelaskan alur spesifik saat seorang **Dosen** melakukan penginputan nilai untuk mahasiswanya.
