@@ -1,0 +1,41 @@
+import { Link } from '@inertiajs/react';
+import type { PropsWithChildren } from 'react';
+import Heading from '@/components/heading';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { useCurrentUrl } from '@/hooks/use-current-url';
+import { cn } from '@/lib/utils';
+import type { NavItem } from '@/types';
+import { School, Library, Users } from 'lucide-react';
+
+const sidebarNavItems: NavItem[] = [
+    {
+        title: 'Kelola Kelas',
+        href: '/admin/kelas',
+        icon: School,
+    },
+    {
+        title: 'Mata Kuliah',
+        href: '/admin/mata-kuliah',
+        icon: Library,
+    },
+    {
+        title: 'Manajemen User',
+        href: '/admin/users',
+        icon: Users,
+    },
+];
+
+export default function AdminLayout({ children }: PropsWithChildren) {
+    return (
+        <div className="px-4 py-6 space-y-8">
+            <Heading
+                title="Admin Panel"
+                description="Kelola data kelas, mata kuliah dan pengguna sistem"
+            />
+            <div className="md:max-w-6xl">
+                {children}
+            </div>
+        </div>
+    );
+}
