@@ -54,7 +54,7 @@ graph LR
 Diagram aktivitas berikut menjelaskan alur spesifik saat seorang **Dosen** melakukan penginputan nilai untuk mahasiswanya.
 
 ```mermaid
-flowchart TD
+graph TD
     Start((Mulai)) --> Login[Dosen Login]
     Login --> Dashboard[Akses Dashboard Dosen]
     Dashboard --> MenuInput[Masuk ke Menu 'Input & Rekap Nilai']
@@ -67,11 +67,11 @@ flowchart TD
     SetupKomponen --> PilihKomponen
     
     KondisiValidasi -- Ya --> FormNilai[Sistem Menampilkan Daftar Mahasiswa]
-    FormNilai --> InputLoop[Dosen Memasukkan Skor (0-100) per Mahasiswa]
+    FormNilai --> InputLoop[Dosen Memasukkan Skor 0-100 per Mahasiswa]
     
     InputLoop --> Submit[Klik Tombol Simpan]
     Submit --> SaveDB[(Simpan ke Database)]
-    SaveDB --> Sukses[Sistem Menampilkan <br/>Notifikasi Berhasil]
+    SaveDB --> Sukses[Sistem Menampilkan Notifikasi Berhasil]
     Sukses --> Finish((Selesai))
 ```
 
